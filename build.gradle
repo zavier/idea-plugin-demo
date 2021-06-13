@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '1.0'
+}
+
+group 'com.github.zavier'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version = '2019.3.5'
+    println "Building for IntelliJ version: ${version}"
+
+    plugins = ['com.intellij.java']
+}
+
+patchPluginXml {
+    version = '0.35-2019.3.5'
+    changeNotes = """
+      Add change notes here.<br/>
+      <em>most HTML tags may be used</em>"""
+}
+
+test {
+    useJUnitPlatform()
+}
