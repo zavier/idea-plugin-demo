@@ -25,5 +25,9 @@
                 description="描述">
             <add-to-group group-id="GenerateGroup" anchor="last"/>
         </action>
+        <action id="com.github.zavier.plugin.psi" class="com.github.zavier.plugin.action.PsiNavigationDemoAction"
+                text="PsiNavigationDemo" description="描述">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
     </actions>
 </idea-plugin>
